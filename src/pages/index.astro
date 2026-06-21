@@ -10,7 +10,7 @@ const latestPosts = posts.slice(0, 3);
 
 <Layout title="Home" active="home">
   <!-- ─── Hero ─── -->
-  <section class="overflow-hidden px-5 pt-16 pb-20 sm:px-8 md:pt-24">
+  <section aria-labelledby="hero-heading" class="overflow-hidden px-5 pt-16 pb-20 sm:px-8 md:pt-24">
     <div class="mx-auto max-w-6xl">
       <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <!-- Text column -->
@@ -19,12 +19,16 @@ const latestPosts = posts.slice(0, 3);
           <div
             class="border-line bg-surface text-muted mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 font-mono text-xs shadow-sm"
           >
-            <span class="h-2 w-2 shrink-0 rounded-full bg-[#28C840]"></span>
-            software engineer → ethical hacker
+            <span class="h-2 w-2 shrink-0 rounded-full bg-[#28C840]" aria-hidden="true"></span>
+            software engineer
+            <span aria-hidden="true">→</span>
+            <span class="sr-only">to</span>
+            ethical hacker
           </div>
 
           <!-- Headline -->
           <h1
+            id="hero-heading"
             class="text-brand mb-3 font-serif text-4xl leading-[1.1] sm:text-5xl md:text-[3.5rem]"
           >
             Hi, I'm{" "}
@@ -47,13 +51,13 @@ const latestPosts = posts.slice(0, 3);
           <div class="flex flex-wrap gap-3">
             <a
               href="/blog"
-              class="bg-accent hover:bg-accent-deep inline-flex items-center rounded-full px-7 py-3 font-sans text-sm font-semibold text-white transition-colors"
+              class="focus-ring bg-accent hover:bg-accent-deep inline-flex items-center rounded-full px-7 py-3 font-sans text-sm font-semibold text-white transition-colors"
             >
-              Read the blog →
+              Read the blog <span aria-hidden="true">→</span>
             </a>
             <a
               href="/contact"
-              class="border-accent text-accent hover:bg-tint inline-flex items-center rounded-full border px-7 py-3 font-sans text-sm font-semibold transition-colors"
+              class="focus-ring border-accent text-accent hover:bg-tint inline-flex items-center rounded-full border px-7 py-3 font-sans text-sm font-semibold transition-colors"
             >
               Get in touch
             </a>
@@ -69,26 +73,27 @@ const latestPosts = posts.slice(0, 3);
   </section>
 
   <!-- ─── Latest Posts ─── -->
-  <section class="bg-band px-5 py-16 sm:px-8 sm:py-20">
+  <section aria-labelledby="latest-posts-heading" class="bg-band px-5 py-16 sm:px-8 sm:py-20">
     <div class="mx-auto max-w-6xl">
       <!-- Section header -->
       <div class="mb-8 flex items-baseline justify-between gap-4">
-        <h2 class="text-brand font-serif text-2xl sm:text-3xl">Latest blog posts</h2>
-        <a href="/blog" class="text-accent flex-shrink-0 font-mono text-sm hover:underline">
-          view all →
-        </a>
+        <h2 id="latest-posts-heading" class="text-brand font-serif text-2xl sm:text-3xl">Latest blog posts</h2>
       </div>
 
       <!-- Cards grid -->
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {latestPosts.map((post) => <BlogCard post={post} />)}
-      </div>
+      <ul class="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3" role="list">
+        {latestPosts.map((post) => (
+          <li>
+            <BlogCard post={post} />
+          </li>
+        ))}
+      </ul>
 
       <!-- View all button -->
       <div class="mt-10 flex justify-center">
         <a
           href="/blog"
-          class="border-accent text-accent hover:bg-accent inline-flex items-center rounded-full border px-8 py-3 font-sans text-sm font-semibold transition-colors hover:text-white"
+          class="focus-ring border-accent text-accent hover:bg-accent inline-flex items-center rounded-full border px-8 py-3 font-sans text-sm font-semibold transition-colors hover:text-white"
         >
           View all posts
         </a>
