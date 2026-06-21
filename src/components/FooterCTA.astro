@@ -2,8 +2,8 @@
 import { Mail, ExternalLink } from "@lucide/astro";
 ---
 
-<section class="bg-accent-deep px-5 py-20 text-center sm:px-8">
-  <div class="mx-auto max-w-2xl">
+<section class="px-5 py-20 text-center sm:px-8">
+  <div class="mx-auto max-w-6xl rounded-3xl bg-accent-deep px-8 py-14 shadow-lg sm:px-12">
     <!-- Eyebrow -->
     <p class="mb-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white/50">
       Get in touch
@@ -21,10 +21,10 @@ import { Mail, ExternalLink } from "@lucide/astro";
     </p>
 
     <!-- Pill buttons -->
-    <div class="flex flex-wrap items-center justify-center gap-3">
+    <div class="flex flex-col items-center justify-center gap-3 sm:flex-row">
       <a
         href="mailto:makayla.b.ferrell@gmail.com"
-        class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 font-sans text-sm font-semibold text-accent-deep transition-opacity hover:opacity-90"
+        class="flex w-full items-center justify-center gap-2 rounded-full sm:w-auto bg-white px-6 py-2.5 font-sans text-sm font-semibold text-accent-deep transition-opacity hover:opacity-90"
       >
         <Mail size={15} />
         Email
@@ -33,7 +33,7 @@ import { Mail, ExternalLink } from "@lucide/astro";
         href="https://medium.com/@makayladecoded"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-2.5 font-sans text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+        class="flex w-full items-center justify-center gap-2 rounded-full sm:w-auto border border-white/30 bg-white/10 px-6 py-2.5 font-sans text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
       >
         <ExternalLink size={15} />
         Medium
@@ -42,7 +42,7 @@ import { Mail, ExternalLink } from "@lucide/astro";
         href="https://linkedin.com/in/makaylaferrell"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-2.5 font-sans text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+        class="flex w-full items-center justify-center gap-2 rounded-full sm:w-auto border border-white/30 bg-white/10 px-6 py-2.5 font-sans text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
       >
         <ExternalLink size={15} />
         LinkedIn
