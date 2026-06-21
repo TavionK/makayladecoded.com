@@ -36,59 +36,71 @@ import { Icon } from "astro-icon/components";
       </div>
 
       <!-- Contact cards -->
-      <div class="grid gap-5 sm:grid-cols-3">
+      <ul class="m-0 grid list-none gap-5 p-0 sm:grid-cols-3" role="list">
         <!-- Email -->
-        <a
-          href="mailto:makayla.b.ferrell@gmail.com"
-          class="group border-line bg-surface flex flex-col items-center gap-3 rounded-2xl border p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-        >
-          <span
-            class="bg-tint text-accent group-hover:bg-accent flex h-14 w-14 items-center justify-center rounded-full transition-colors group-hover:text-white"
+        <li>
+          <a
+            href="mailto:makayla.b.ferrell@gmail.com"
+            aria-label="Email Makayla at makayla.b.ferrell@gmail.com"
+            class="group border-line bg-surface flex flex-col items-center gap-3 rounded-2xl border p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
-            <Mail size={22} />
-          </span>
-          <div>
-            <p class="text-brand mb-1 font-sans text-sm font-semibold">Email</p>
-            <p class="text-muted font-mono text-xs">makayla.b.ferrell@gmail.com</p>
-          </div>
-        </a>
+            <span
+              aria-hidden="true"
+              class="bg-tint text-accent group-hover:bg-accent flex h-14 w-14 items-center justify-center rounded-full transition-colors group-hover:text-white"
+            >
+              <Mail size={22} aria-hidden="true" />
+            </span>
+            <div>
+              <p class="text-brand mb-1 font-sans text-sm font-semibold">Email</p>
+              <p class="text-muted font-mono text-xs">makayla.b.ferrell@gmail.com</p>
+            </div>
+          </a>
+        </li>
 
         <!-- Medium -->
-        <a
-          href="https://medium.com/@makayla.b.ferrell"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group border-line bg-surface flex flex-col items-center gap-3 rounded-2xl border p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-        >
-          <span
-            class="bg-tint text-accent group-hover:bg-accent flex h-14 w-14 items-center justify-center rounded-full transition-colors group-hover:text-white"
+        <li>
+          <a
+            href="https://medium.com/@makayla.b.ferrell"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Medium — @makayla.b.ferrell (opens in a new tab)"
+            class="group border-line bg-surface flex flex-col items-center gap-3 rounded-2xl border p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
-            <Icon name="simple-icons:medium" size={22} />
-          </span>
-          <div>
-            <p class="text-brand mb-1 font-sans text-sm font-semibold">Medium</p>
-            <p class="text-muted font-mono text-xs">@makayla.b.ferrell</p>
-          </div>
-        </a>
+            <span
+              aria-hidden="true"
+              class="bg-tint text-accent group-hover:bg-accent flex h-14 w-14 items-center justify-center rounded-full transition-colors group-hover:text-white"
+            >
+              <Icon name="simple-icons:medium" size={22} aria-hidden="true" />
+            </span>
+            <div>
+              <p class="text-brand mb-1 font-sans text-sm font-semibold">Medium</p>
+              <p class="text-muted font-mono text-xs">@makayla.b.ferrell</p>
+            </div>
+          </a>
+        </li>
 
         <!-- LinkedIn -->
-        <a
-          href="https://www.linkedin.com/in/makayla-ferrell/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group border-line bg-surface flex flex-col items-center gap-3 rounded-2xl border p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-        >
-          <span
-            class="bg-tint text-accent group-hover:bg-accent flex h-14 w-14 items-center justify-center rounded-full transition-colors group-hover:text-white"
+        <li>
+          <a
+            href="https://www.linkedin.com/in/makayla-ferrell/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn — /in/makayla-ferrell (opens in a new tab)"
+            class="group border-line bg-surface flex flex-col items-center gap-3 rounded-2xl border p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
-            <Icon name="simple-icons:linkedin" size={22} />
-          </span>
-          <div>
-            <p class="text-brand mb-1 font-sans text-sm font-semibold">LinkedIn</p>
-            <p class="text-muted font-mono text-xs">/in/makayla-ferrell</p>
-          </div>
-        </a>
-      </div>
+            <span
+              aria-hidden="true"
+              class="bg-tint text-accent group-hover:bg-accent flex h-14 w-14 items-center justify-center rounded-full transition-colors group-hover:text-white"
+            >
+              <Icon name="simple-icons:linkedin" size={22} aria-hidden="true" />
+            </span>
+            <div>
+              <p class="text-brand mb-1 font-sans text-sm font-semibold">LinkedIn</p>
+              <p class="text-muted font-mono text-xs">/in/makayla-ferrell</p>
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </Layout>
