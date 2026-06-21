@@ -52,6 +52,7 @@
     color: var(--color-brand);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scrollbar-gutter: stable;
   }
 
   *,
