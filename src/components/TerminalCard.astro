@@ -1,46 +1,49 @@
 ---
+
 ---
 
-<div class="relative w-full max-w-[460px]">
+<div class="relative w-full max-w-115">
   <!-- Decorative blurred circles behind the card -->
   <div
-    class="absolute -right-8 -top-10 h-52 w-52 rounded-full bg-periwinkle opacity-60 blur-3xl"
+    class="bg-periwinkle absolute -top-10 -right-8 h-52 w-52 rounded-full opacity-90 blur-sm"
     aria-hidden="true"
-  ></div>
+  >
+  </div>
   <div
-    class="absolute -bottom-8 -left-6 h-36 w-36 rounded-full bg-blush opacity-50 blur-2xl"
+    class="bg-blush absolute -bottom-8 -left-6 h-36 w-36 rounded-full opacity-80 blur-sm"
     aria-hidden="true"
-  ></div>
+  >
+  </div>
 
   <!-- Terminal window -->
   <div
     role="img"
     aria-label="A terminal-style introduction: Makayla Ferrell — software engineer, ethical hacker, cloud pentester, and AI red teamer."
-    class="relative overflow-hidden rounded-2xl border border-line bg-surface shadow-xl ring-1 ring-black/5"
+    class="border-line bg-surface relative overflow-hidden rounded-2xl border shadow-xl ring-1 ring-black/5"
   >
     <!-- Title bar -->
-    <div aria-hidden="true" class="flex items-center gap-1.5 border-b border-line bg-bg px-4 py-3">
+    <div aria-hidden="true" class="border-line bg-bg flex items-center gap-1.5 border-b px-4 py-3">
       <span class="h-3 w-3 rounded-full bg-[#FF5F57]"></span>
       <span class="h-3 w-3 rounded-full bg-[#FEBC2E]"></span>
       <span class="h-3 w-3 rounded-full bg-[#28C840]"></span>
-      <span class="ml-auto font-mono text-[11px] text-muted">makayla@decoded: ~</span>
+      <span class="text-muted ml-auto font-mono text-[11px]">makayla@decoded: ~</span>
     </div>
 
     <!-- Terminal body -->
     <div aria-hidden="true" class="px-5 py-5 font-mono text-[13px] leading-relaxed">
       <!-- whoami -->
       <div class="flex items-start gap-2">
-        <span class="select-none text-accent">$</span>
+        <span class="text-accent select-none">$</span>
         <span class="text-brand">whoami</span>
       </div>
-      <div class="ml-4 mt-0.5 text-muted">makayla_ferrell</div>
+      <div class="text-muted mt-0.5 ml-4">makayla_ferrell</div>
 
       <!-- cat roles.txt -->
       <div class="mt-3 flex items-start gap-2">
-        <span class="select-none text-accent">$</span>
+        <span class="text-accent select-none">$</span>
         <span class="text-brand">cat roles.txt</span>
       </div>
-      <ul class="ml-4 mt-0.5 list-none space-y-0.5 p-0">
+      <ul class="mt-0.5 ml-4 list-none space-y-0.5 p-0">
         <li><span class="text-muted">-</span> <span class="text-brand">software_engineer</span></li>
         <li><span class="text-muted">-</span> <span class="text-brand">ethical_hacker</span></li>
         <li><span class="text-muted">-</span> <span class="text-brand">cloud_pentester</span></li>
@@ -53,20 +56,18 @@
 
       <!-- decode_life.sh -->
       <div class="mt-3 flex items-start gap-2">
-        <span class="select-none text-accent">$</span>
+        <span class="text-accent select-none">$</span>
         <span class="text-brand">./decode_life.sh</span>
       </div>
-      <div class="ml-4 mt-0.5 text-muted">
+      <div class="text-muted mt-0.5 ml-4">
         Decoding... <span class="text-accent">████████████</span> 100%
       </div>
       <div class="ml-4 text-[#28C840]">Access granted. ✓</div>
 
       <!-- cursor blink -->
       <div class="mt-3 flex items-start gap-2">
-        <span class="select-none text-accent">$</span>
-        <span
-          class="inline-block h-[14px] w-[8px] animate-pulse bg-accent opacity-80"
-          aria-hidden="true"
+        <span class="text-accent select-none">$</span>
+        <span class="bg-accent inline-block h-3.5 w-2 animate-pulse opacity-80" aria-hidden="true"
         ></span>
       </div>
     </div>
