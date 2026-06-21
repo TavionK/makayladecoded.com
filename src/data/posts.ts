@@ -11,7 +11,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/bypass-restrictions-in-api-gateway-acrtp-783a2f3b7400",
     src: "/img/thumbnails/ApiG.png",
-    alt: "ACRTP",
+    alt: "",
     title: "Bypass Restrictions in API Gateway",
     desc: "Using AWS API Gateway misconfigurations to gain unauthorized access to production environments.",
     type: "AWS",
@@ -19,7 +19,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/ssrf-to-pwned-acrtp-103a79ac28c7",
     src: "/img/thumbnails/aws2.jpg",
-    alt: "ACRTP",
+    alt: "",
     title: "SSRF to Pwned",
     desc: "Exploiting a Server-Side Request Forgery (SSRF) vulnerability to extract sensitive files from an S3 bucket.",
     type: "AWS",
@@ -27,7 +27,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/looting-public-ebs-snapshots-acrtp-ec1732d5cf89",
     src: "/img/thumbnails/dataE.png",
-    alt: "ACRTP",
+    alt: "",
     title: "Looting Public EBS Snapshots",
     desc: "Enumerating EBS snapshots and exfiltrating data.",
     type: "AWS",
@@ -35,7 +35,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/escalate-privileges-by-iam-policy-rollback-acrtp-387871fe2dc3",
     src: "/img/thumbnails/aws5.jpg",
-    alt: "ACRTP",
+    alt: "",
     title: "Escalate Privileges by IAM Policy Rollback",
     desc: "Exploiting IAM policy version control and password cracking zip files",
     type: "AWS",
@@ -43,7 +43,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/assume-privileged-role-with-external-id-acrtp-d694b351e9eb",
     src: "/img/thumbnails/privleged-role.png",
-    alt: "ACRTP",
+    alt: "",
     title: "Assume Privileged Role with External ID",
     desc: "Using IAM policy and aws-enumerator to escalate privileges within an AWS environment.",
     type: "AWS",
@@ -51,7 +51,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/identifying-the-aws-account-id-from-a-public-s3-bucket-acrtp-0f93e538e731",
     src: "/img/thumbnails/aws3.jpg",
-    alt: "ACRTP",
+    alt: "",
     title: "Identifying the AWS Account ID from a Public S3 Bucket",
     desc: "Understanding the s3-account-search tool.",
     type: "AWS",
@@ -59,7 +59,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/acrtp-hunting-for-secrets-in-git-repos-b31d8e635d07",
     src: "/img/thumbnails/gitaws.png",
-    alt: "ACRTP",
+    alt: "",
     title: "Hunting for Secrets in Git Repos",
     desc: "Discovering secrets hidden in a Git repository and using them to access an AWS S3 bucket.",
     type: "AWS",
@@ -67,7 +67,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/s3-enumeration-basics-acrtp-6e1df9ecbb07",
     src: "/img/thumbnails/aws6.jpg",
-    alt: "ACRTP",
+    alt: "",
     title: "S3 Enumeration Basics",
     desc: "CTF-style challenge focused on S3 enumeration and credential exfiltration.",
     type: "AWS",
@@ -75,7 +75,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/intro-to-aws-iam-enumeration-acrtp-c0e140ebc9d8",
     src: "/img/thumbnails/aws2.jpg",
-    alt: "ACRTP",
+    alt: "",
     title: "Intro to AWS IAM Enumeration",
     desc: "Get comfortable with AWS Identity and Access Management (IAM) using the AWS CLI.",
     type: "AWS",
@@ -83,7 +83,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/devsecops-ai/prompt-hacking-with-gandalf-ai-58330cfca838",
     src: "/img/thumbnails/gandalf.png",
-    alt: "Gandalf",
+    alt: "",
     title: "Prompt Hacking Gandalf AI",
     desc: "Use prompt injection to bypass Gandalf AI.",
     type: "AI",
@@ -91,7 +91,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-w1seguy-726d45081a4c",
     src: "/img/thumbnails/xor2.png",
-    alt: "W1seGuy",
+    alt: "",
     title: "TryHackMe W1seGuy",
     desc: "CTF style cryptography challenge that focuses on the XOR operator.",
     type: "TryHackMe",
@@ -99,7 +99,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-traverse-f9959c945738",
     src: "/img/thumbnails/api.png",
-    alt: "Traverse",
+    alt: "",
     title: "Tryhackme Traverse",
     desc: "CTF style application security challenge that includes API hacking, python scripting, and command injection.",
     type: "TryHackMe",
@@ -107,7 +107,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-uranium-ba67a0697a21",
     src: "/img/thumbnails/uranium.png",
-    alt: "Uranium",
+    alt: "",
     title: "Tryhackme Uranium CTF",
     desc: "Explore OSINT, phishing, wireshark forensics, and SUIDs.",
     type: "TryHackMe",
@@ -115,7 +115,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-brooklyn-nine-nine-3765baeb3f73",
     src: "/img/thumbnails/b99.jpg",
-    alt: "Brooklyn Nine Nine",
+    alt: "",
     title: "Tryhackme Brooklyn Nine Nine",
     desc: "Exploiting anonymous ftp login, steganography, and Linux privilege escalation.",
     type: "TryHackMe",
@@ -123,7 +123,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-attacktive-directory-8a4eeee05ea4",
     src: "/img/thumbnails/ad.jpg",
-    alt: "Tryhackme Attacktive Directory",
+    alt: "",
     title: "Tryhackme Attacktive Directory",
     desc: "Exploiting an active directory domain controller.",
     type: "TryHackMe",
@@ -131,7 +131,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-looking-glass-767626f60858",
     src: "/img/thumbnails/alice.jpg",
-    alt: "Looking Glass",
+    alt: "",
     title: "Tryhackme Looking Glass",
     desc: "Cryptography, Linux enumeration, lateral and vertical privilege escalation.",
     type: "TryHackMe",
@@ -139,7 +139,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-nerdherd-room-b6a8ec0bab05",
     src: "/img/thumbnails/nerdherd.png",
-    alt: "NerdHerd",
+    alt: "",
     title: "Tryhackme NerdHerd",
     desc: "Exploiting ftp anonymous login, smb enumeration, vigenère ciphers, and a Linux kernel privilege escalation.",
     type: "TryHackMe",
@@ -147,7 +147,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-git-happens-823dfe87cf0b",
     src: "/img/thumbnails/git.png",
-    alt: "Git Happens",
+    alt: "",
     title: "Tryhackme Git Happens",
     desc: "Enumerating a public git repository.",
     type: "TryHackMe",
@@ -155,7 +155,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-kenobi-room-46965d0d4501",
     src: "/img/thumbnails/kenobi.png",
-    alt: "Kenobi",
+    alt: "",
     title: "Tryhackme Kenobi",
     desc: "Samba enumeration, ftp exploitation, and linux privilege escalation.",
     type: "TryHackMe",
@@ -163,7 +163,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-wonderland-dafcc5a3efc",
     src: "/img/thumbnails/wonder.png",
-    alt: "Wonderland",
+    alt: "",
     title: "Tryhackme Wonderland",
     desc: "Explore python library hijacking, Linux enumeration, and privilege escalation.",
     type: "TryHackMe",
@@ -171,7 +171,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-inclusion-room-d84cabfedf14",
     src: "/img/thumbnails/inclus.png",
-    alt: "Inclusion",
+    alt: "",
     title: "Tryhackme Inclusion",
     desc: "Practice with Local File Inclusion (LFI) attacks.",
     type: "TryHackMe",
@@ -179,7 +179,7 @@ export const posts: Post[] = [
   {
     link: "https://medium.com/@makayla.b.ferrell/tryhackme-easy-peasy-writeup-e688da86044b",
     src: "/img/thumbnails/easyp.png",
-    alt: "Easy Peasy",
+    alt: "",
     title: "Tryhackme Easy Peasy",
     desc: "Practice locating a hidden directory to get initial access to a vulnerable machine, and escalating privileges using a crontab.",
     type: "TryHackMe",
