@@ -16,12 +16,12 @@ import { posts } from "../data/posts";
     style="background: linear-gradient(160deg, #f3ecf8 0%, #efe8f8 50%, #fbf7f1 100%);"
   >
     <div class="mx-auto max-w-3xl text-center">
-      <h1 class="mb-4 font-serif text-4xl leading-tight text-brand sm:text-5xl md:text-[3.25rem]">
-        My <span class="not-italic italic text-accent">Blog</span>
+      <h1 class="text-brand mb-4 font-serif text-4xl leading-tight sm:text-5xl md:text-[3.25rem]">
+        My <span class="text-accent">Blog</span>
       </h1>
-      <p class="font-sans text-base leading-relaxed text-muted sm:text-lg">
-        Write-ups from cloud pentesting, CTFs &amp; AI red-teaming. Each post
-        opens the full write-up on Medium.
+      <p class="text-muted font-sans text-base leading-relaxed sm:text-lg">
+        Write-ups from cloud pentesting, CTFs &amp; AI red-teaming. Each post opens the full
+        write-up on Medium.
       </p>
     </div>
   </section>
@@ -30,11 +30,13 @@ import { posts } from "../data/posts";
   <section aria-label="Blog posts" class="px-5 py-16 sm:px-8 sm:py-20">
     <div class="mx-auto max-w-6xl">
       <ul class="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3" role="list">
-        {posts.map((post) => (
-          <li>
-            <BlogCard post={post} />
-          </li>
-        ))}
+        {
+          posts.map((post) => (
+            <li>
+              <BlogCard post={post} headingLevel="h2" />
+            </li>
+          ))
+        }
       </ul>
     </div>
   </section>
