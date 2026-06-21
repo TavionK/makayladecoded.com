@@ -1,0 +1,103 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlogCard from "../components/BlogCard.astro";
+import TerminalCard from "../components/TerminalCard.astro";
+import FooterCTA from "../components/FooterCTA.astro";
+import { posts } from "../data/posts";
+
+const latestPosts = posts.slice(0, 3);
+---
+
+<Layout title="Home" active="home">
+  <!-- ─── Hero ─── -->
+  <section class="overflow-hidden px-5 pb-20 pt-16 sm:px-8 md:pt-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <!-- Text column -->
+        <div class="max-w-xl">
+          <!-- Badge -->
+          <div
+            class="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-1.5 font-mono text-xs text-muted shadow-sm"
+          >
+            <span class="h-2 w-2 flex-shrink-0 rounded-full bg-[#28C840]"></span>
+            software engineer → ethical hacker
+          </div>
+
+          <!-- Headline -->
+          <h1 class="mb-3 font-serif text-4xl leading-[1.1] text-brand sm:text-5xl md:text-[3.5rem]">
+            Hi, I'm Makayla{" "}
+            <span class="text-accent">Ferrell.</span>
+          </h1>
+
+          <p class="mb-6 font-serif text-2xl italic leading-snug text-accent sm:text-3xl">
+            This is my life, decoded.
+          </p>
+
+          <!-- Body -->
+          <p class="mb-8 font-sans text-base leading-relaxed text-muted sm:text-lg">
+            I'm a software engineer turned ethical hacker who loves breaking things
+            (responsibly). This site is home to my write-ups, information about me,
+            and a way to get in touch. Click around and see what you find.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/blog"
+              class="inline-flex items-center rounded-full bg-accent px-7 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-accent-deep"
+            >
+              Read the blog →
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center rounded-full border border-accent px-7 py-3 font-sans text-sm font-semibold text-accent transition-colors hover:bg-tint"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Terminal card column -->
+        <div class="flex justify-center lg:justify-end">
+          <TerminalCard />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Latest Posts ─── -->
+  <section class="bg-band px-5 py-16 sm:px-8 sm:py-20">
+    <div class="mx-auto max-w-6xl">
+      <!-- Section header -->
+      <div class="mb-8 flex items-baseline justify-between gap-4">
+        <h2 class="font-serif text-2xl text-brand sm:text-3xl">
+          Latest blog posts
+        </h2>
+        <a
+          href="/blog"
+          class="flex-shrink-0 font-mono text-sm text-accent hover:underline"
+        >
+          view all →
+        </a>
+      </div>
+
+      <!-- Cards grid -->
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {latestPosts.map((post) => <BlogCard post={post} />)}
+      </div>
+
+      <!-- View all button -->
+      <div class="mt-10 flex justify-center">
+        <a
+          href="/blog"
+          class="inline-flex items-center rounded-full border border-accent px-8 py-3 font-sans text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-white"
+        >
+          View all posts
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer CTA ─── -->
+  <FooterCTA />
+</Layout>

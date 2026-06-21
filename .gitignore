@@ -1,0 +1,14 @@
+# IDE
+.idea/
+
+# Astro
+dist/
+.astro/
+
+# Node
+node_modules/
+
+# Env
+.env
+.env.*
+!.env.example

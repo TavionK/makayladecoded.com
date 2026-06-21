@@ -1,0 +1,61 @@
+---
+import { ExternalLink } from "@lucide/astro";
+import type { Post } from "../data/posts";
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+
+const tagColors: Record<Post["type"], string> = {
+  AWS: "bg-tint text-accent",
+  TryHackMe: "bg-tint text-accent",
+  AI: "bg-band text-accent-deep",
+};
+---
+
+<a
+  href={post.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group flex flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+>
+  <!-- Image / placeholder area -->
+  <div class="relative h-44 overflow-hidden bg-tint">
+    <img
+      src={post.src}
+      alt={post.alt}
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+    <span
+      class="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 text-accent shadow-sm backdrop-blur-sm"
+    >
+      <ExternalLink size={13} strokeWidth={2.5} />
+    </span>
+  </div>
+
+  <!-- Card body -->
+  <div class="flex flex-1 flex-col gap-2.5 p-5">
+    <span
+      class:list={[
+        "self-start rounded-full px-2.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-wider",
+        tagColors[post.type],
+      ]}
+    >
+      {post.type}
+    </span>
+
+    <h3 class="font-sans text-base font-semibold leading-snug text-brand line-clamp-2">
+      {post.title}
+    </h3>
+
+    <p class="font-sans text-sm leading-relaxed text-muted line-clamp-3 flex-1">
+      {post.desc}
+    </p>
+
+    <span class="mt-1 font-mono text-xs font-medium text-accent">
+      read on Medium ↗
+    </span>
+  </div>
+</a>

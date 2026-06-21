@@ -1,0 +1,116 @@
+---
+import { Menu, X } from "@lucide/astro";
+
+interface Props {
+  active?: "home" | "blog" | "contact";
+}
+
+const { active = "home" } = Astro.props;
+
+const linkBase =
+  "text-sm font-medium text-brand hover:text-accent transition-colors duration-200 relative";
+const activeUnderline =
+  "after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px] after:bg-accent after:rounded-full";
+---
+
+<header class="border-b border-line bg-bg sticky top-0 z-50">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <nav class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0 font-sans text-lg font-semibold text-brand">
+        <span class="font-extrabold sm:hidden">M<em class="not-italic italic text-accent">D</em></span>
+        <span class="hidden sm:inline">Makayla <em class="not-italic font-semibold italic text-accent">Decoded</em></span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden items-center gap-8 md:flex">
+        <a
+          href="/"
+          class:list={[linkBase, active === "home" && activeUnderline]}
+        >
+          Home
+        </a>
+        <a
+          href="/blog"
+          class:list={[linkBase, active === "blog" && activeUnderline]}
+        >
+          Blog
+        </a>
+        <a
+          href="/contact"
+          class:list={[
+            "rounded-full px-5 py-2 text-sm font-semibold transition-colors duration-200",
+            active === "contact"
+              ? "bg-accent-deep text-white"
+              : "bg-accent text-white hover:bg-accent-deep",
+          ]}
+        >
+          Contact Me
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="nav-toggle"
+        class="flex items-center justify-center rounded-lg p-2 text-brand hover:bg-tint md:hidden"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <Menu size={22} id="icon-open" />
+        <X size={22} id="icon-close" class="hidden" />
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="nav-menu"
+    class="hidden border-t border-line bg-bg px-5 pb-5 pt-4 md:hidden"
+  >
+    <div class="flex flex-col gap-1">
+      <a
+        href="/"
+        class:list={[
+          "rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+          active === "home"
+            ? "bg-tint text-accent"
+            : "text-brand hover:bg-tint",
+        ]}
+      >
+        Home
+      </a>
+      <a
+        href="/blog"
+        class:list={[
+          "rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+          active === "blog"
+            ? "bg-tint text-accent"
+            : "text-brand hover:bg-tint",
+        ]}
+      >
+        Blog
+      </a>
+      <a
+        href="/contact"
+        class="mt-2 rounded-full bg-accent px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-accent-deep transition-colors"
+      >
+        Contact Me
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = !menu?.classList.contains("hidden");
+    menu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden");
+    iconClose?.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+  });
+</script>

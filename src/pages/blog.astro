@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlogCard from "../components/BlogCard.astro";
+import { posts } from "../data/posts";
+---
+
+<Layout
+  title="Blog"
+  description="Write-ups from cloud pentesting, CTFs & AI red-teaming by Makayla Ferrell."
+  active="blog"
+>
+  <!-- ─── Blog header band ─── -->
+  <section
+    class="px-5 py-16 sm:px-8 sm:py-20"
+    style="background: linear-gradient(160deg, #f3ecf8 0%, #efe8f8 50%, #fbf7f1 100%);"
+  >
+    <div class="mx-auto max-w-3xl text-center">
+      <h1 class="mb-4 font-serif text-4xl leading-tight text-brand sm:text-5xl md:text-[3.25rem]">
+        My <em class="not-italic italic text-accent">Blog</em>
+      </h1>
+      <p class="font-sans text-base leading-relaxed text-muted sm:text-lg">
+        Write-ups from cloud pentesting, CTFs &amp; AI red-teaming. Each post
+        opens the full write-up on Medium.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Posts grid ─── -->
+  <section class="px-5 py-16 sm:px-8 sm:py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => <BlogCard post={post} />)}
+      </div>
+    </div>
+  </section>
+</Layout>

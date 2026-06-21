@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Mail } from "@lucide/astro";
+---
+
+<Layout
+  title="Contact"
+  description="Get in touch with Makayla Ferrell — software engineer and ethical hacker."
+  active="contact"
+>
+  <div class="relative min-h-[calc(100vh-64px-89px)] overflow-hidden px-5 py-20 sm:px-8">
+    <!-- Decorative circle — top right -->
+    <div
+      class="pointer-events-none absolute -right-24 -top-16 h-80 w-80 rounded-full bg-periwinkle opacity-70 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <!-- Decorative circle — bottom left -->
+    <div
+      class="pointer-events-none absolute -bottom-10 -left-16 h-52 w-52 rounded-full bg-blush opacity-60 blur-2xl"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative mx-auto max-w-3xl">
+      <!-- Headline -->
+      <div class="mb-12 text-center">
+        <h1
+          class="mb-4 font-serif text-4xl leading-tight text-brand sm:text-5xl md:text-[3.25rem]"
+        >
+          Contact <em class="not-italic italic text-accent">Me</em>
+        </h1>
+        <p class="mx-auto max-w-md font-sans text-base leading-relaxed text-muted">
+          Got a question, a collaboration in mind, or just want to talk
+          security? I'd love to hear from you — pick whichever works best.
+        </p>
+      </div>
+
+      <!-- Contact cards -->
+      <div class="grid gap-5 sm:grid-cols-3">
+        <!-- Email -->
+        <a
+          href="mailto:makayla.b.ferrell@gmail.com"
+          class="group flex flex-col items-center gap-3 rounded-2xl border border-line bg-surface p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+        >
+          <span
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-tint text-accent transition-colors group-hover:bg-accent group-hover:text-white"
+          >
+            <Mail size={22} />
+          </span>
+          <div>
+            <p class="mb-1 font-sans text-sm font-semibold text-brand">Email</p>
+            <p class="font-mono text-xs text-muted">makayla.b.ferrell@gmail.com</p>
+          </div>
+        </a>
+
+        <!-- Medium -->
+        <a
+          href="https://medium.com/@makayladecoded"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex flex-col items-center gap-3 rounded-2xl border border-line bg-surface p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+        >
+          <span
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-tint font-serif text-xl font-bold text-accent transition-colors group-hover:bg-accent group-hover:text-white"
+          >
+            M
+          </span>
+          <div>
+            <p class="mb-1 font-sans text-sm font-semibold text-brand">Medium</p>
+            <p class="font-mono text-xs text-muted">@makayladecoded</p>
+          </div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a
+          href="https://linkedin.com/in/makaylaferrell"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex flex-col items-center gap-3 rounded-2xl border border-line bg-surface p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+        >
+          <span
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-tint font-sans text-sm font-bold text-accent transition-colors group-hover:bg-accent group-hover:text-white"
+          >
+            in
+          </span>
+          <div>
+            <p class="mb-1 font-sans text-sm font-semibold text-brand">LinkedIn</p>
+            <p class="font-mono text-xs text-muted">/in/makaylaferrell</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
