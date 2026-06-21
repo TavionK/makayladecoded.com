@@ -29,7 +29,7 @@ import { posts } from "../data/posts";
   <!-- ─── Posts grid ─── -->
   <section aria-label="Blog posts" class="px-5 py-16 sm:px-8 sm:py-20">
     <div class="mx-auto max-w-6xl">
-      <ul class="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3" role="list">
+      <ul id="blog-posts-grid" class="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3" role="list">
         {
           posts.map((post) => (
             <li>
@@ -40,4 +40,12 @@ import { posts } from "../data/posts";
       </ul>
     </div>
   </section>
+
+  <script is:inline>
+    var imgs = document.querySelectorAll("#blog-posts-grid img");
+    var limit = window.matchMedia("(min-width: 768px)").matches ? 3 : 1;
+    for (var i = 0; i < limit && i < imgs.length; i++) {
+      imgs[i].loading = "eager";
+    }
+  </script>
 </Layout>

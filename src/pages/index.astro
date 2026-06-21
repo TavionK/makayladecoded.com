@@ -81,7 +81,7 @@ const latestPosts = posts.slice(0, 3);
       </div>
 
       <!-- Cards grid -->
-      <ul class="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3" role="list">
+      <ul id="latest-posts-grid" class="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3" role="list">
         {latestPosts.map((post) => (
           <li>
             <BlogCard post={post} />
@@ -103,4 +103,12 @@ const latestPosts = posts.slice(0, 3);
 
   <!-- ─── Footer CTA ─── -->
   <FooterCTA />
+
+  <script is:inline>
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      document.querySelectorAll("#latest-posts-grid img").forEach(function (img) {
+        img.loading = "eager";
+      });
+    }
+  </script>
 </Layout>

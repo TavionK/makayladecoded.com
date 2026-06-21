@@ -1,13 +1,15 @@
 ---
+import { Image } from "astro:assets";
 import { ExternalLink } from "@lucide/astro";
 import type { Post } from "../data/posts";
 
 interface Props {
   post: Post;
   headingLevel?: "h2" | "h3";
+  loading?: "lazy" | "eager";
 }
 
-const { post, headingLevel = "h3" } = Astro.props;
+const { post, headingLevel = "h3", loading = "lazy" } = Astro.props;
 const Heading = headingLevel;
 
 const tagColors: Record<Post["type"], string> = {
@@ -26,10 +28,13 @@ const tagColors: Record<Post["type"], string> = {
 >
   <!-- Image / placeholder area -->
   <div class="relative h-44 overflow-hidden bg-tint">
-    <img
+    <Image
       src={post.src}
+      width={600}
+      height={340}
       alt=""
       aria-hidden="true"
+      loading={loading}
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
     />
     <span
