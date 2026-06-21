@@ -20,6 +20,24 @@
   --font-mono: "Space Mono", "Courier New", monospace;
 }
 
+@utility focus-ring {
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@utility focus-ring-white {
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+  }
+}
+
 @layer base {
   html {
     font-family: var(--font-sans), sans-serif;
@@ -33,5 +51,11 @@
   *::before,
   *::after {
     border-color: var(--color-line);
+  }
+
+  a,
+  button,
+  [tabindex]:not([tabindex="-1"]) {
+    @apply focus-ring;
   }
 }
