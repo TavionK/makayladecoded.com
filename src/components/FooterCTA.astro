@@ -3,7 +3,7 @@ import { Mail } from "@lucide/astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="px-5 py-20 text-center sm:px-8">
+<section aria-labelledby="footer-cta-heading" class="px-5 py-20 text-center sm:px-8">
   <div class="mx-auto max-w-6xl rounded-3xl bg-accent-deep px-8 py-14 shadow-lg sm:px-12">
     <!-- Eyebrow -->
     <p class="mb-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white/50">
@@ -11,12 +11,12 @@ import { Icon } from "astro-icon/components";
     </p>
 
     <!-- Headline -->
-    <h2 class="mb-4 font-serif text-3xl leading-tight text-white sm:text-4xl md:text-[2.75rem]">
+    <h2 id="footer-cta-heading" class="mb-4 font-serif text-3xl leading-tight text-white sm:text-4xl md:text-[2.75rem]">
       Let's <em class="italic">decode</em> something together.
     </h2>
 
     <!-- Body -->
-    <p class="mb-10 font-sans text-base leading-relaxed text-white/70">
+    <p class="mb-10 font-sans text-base leading-relaxed text-white/85">
       Have a question, a collaboration in mind, or just want to talk security?
       I'd love to hear from you.
     </p>
@@ -25,6 +25,7 @@ import { Icon } from "astro-icon/components";
     <div class="flex flex-col items-center justify-center gap-3 sm:flex-row">
       <a
         href="mailto:makayla.b.ferrell@gmail.com"
+        aria-label="Email Makayla"
         class="focus-ring-white flex w-full items-center justify-center gap-2 rounded-full sm:w-auto bg-white px-6 py-2.5 font-sans text-sm font-semibold text-accent-deep transition-opacity hover:opacity-90"
       >
         <Mail size={15} />
@@ -34,18 +35,20 @@ import { Icon } from "astro-icon/components";
         href="https://medium.com/@makayla.b.ferrell"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Makayla's Medium profile (opens in a new tab)"
         class="focus-ring-white flex w-full items-center justify-center gap-2 rounded-full sm:w-auto border border-white/30 bg-white/10 px-6 py-2.5 font-sans text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
       >
-        <Icon name="simple-icons:medium" size={15} />
+        <Icon name="simple-icons:medium" size={15} aria-hidden="true" />
         Medium
       </a>
       <a
         href="https://www.linkedin.com/in/makayla-ferrell/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Makayla's LinkedIn profile (opens in a new tab)"
         class="focus-ring-white flex w-full items-center justify-center gap-2 rounded-full sm:w-auto border border-white/30 bg-white/10 px-6 py-2.5 font-sans text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
       >
-        <Icon name="simple-icons:linkedin" size={15} />
+        <Icon name="simple-icons:linkedin" size={15} aria-hidden="true" />
         LinkedIn
       </a>
     </div>
