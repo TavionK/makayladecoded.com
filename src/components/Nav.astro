@@ -13,26 +13,35 @@ const activeUnderline =
   "after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px] after:bg-accent after:rounded-full";
 ---
 
-<header class="border-b border-line bg-bg sticky top-0 z-50">
+<header class="border-line bg-bg sticky top-0 z-50 border-b">
   <div class="mx-auto max-w-6xl px-5 sm:px-8">
-    <nav class="flex h-16 items-center justify-between">
+    <nav aria-label="Site" class="flex h-16 items-center justify-between">
       <!-- Logo -->
-      <a href="/" class="flex-shrink-0 font-sans text-lg font-semibold text-brand">
-        <span class="font-extrabold sm:hidden">M<em class="not-italic italic text-accent">D</em></span>
-        <span class="hidden sm:inline">Makayla <em class="not-italic font-semibold italic text-accent">Decoded</em></span>
+      <a href="/" aria-label="Makayla Decoded — home" class="text-brand shrink-0 font-sans text-lg font-semibold">
+        <span aria-hidden="true" class="font-extrabold sm:hidden">M<span class="text-accent">D</span></span>
+        <span aria-hidden="true" class="hidden sm:inline">Makayla <span class="text-accent font-semibold">Decoded</span></span>
       </a>
 
       <!-- Desktop nav -->
       <div class="hidden items-center gap-8 md:flex">
-        <a href="/" class:list={[linkBase, active === "home" && activeUnderline]}>Home</a>
-        <a href="/blog" class:list={[linkBase, active === "blog" && activeUnderline]}>Blog</a>
+        <a
+          href="/"
+          aria-current={active === "home" ? "page" : undefined}
+          class:list={[linkBase, active === "home" && activeUnderline]}
+        >Home</a>
+        <a
+          href="/blog"
+          aria-current={active === "blog" ? "page" : undefined}
+          class:list={[linkBase, active === "blog" && activeUnderline]}
+        >Blog</a>
         <a
           href="/contact"
+          aria-current={active === "contact" ? "page" : undefined}
           class:list={[
             "rounded-full px-5 py-2 text-sm font-semibold transition-colors duration-200",
             active === "contact"
               ? "bg-accent-deep text-white"
-              : "bg-accent text-white hover:bg-accent-deep",
+              : "bg-accent hover:bg-accent-deep text-white",
           ]}
         >
           Contact Me
@@ -42,11 +51,11 @@ const activeUnderline =
       <!-- Mobile hamburger -->
       <button
         id="nav-toggle"
-        class="flex items-center justify-center rounded-lg p-2 text-brand hover:bg-tint md:hidden"
+        class="text-brand hover:bg-tint flex items-center justify-center rounded-lg p-2 md:hidden"
         aria-label="Open menu"
         aria-expanded="false"
       >
-        <Menu size={22} />
+        <Menu size={22} aria-hidden="true" />
       </button>
     </nav>
   </div>
@@ -55,21 +64,21 @@ const activeUnderline =
 <!-- Full-screen mobile overlay -->
 <div
   id="nav-overlay"
-  class="fixed inset-0 z-[999] bg-bg flex flex-col opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+  class="bg-bg pointer-events-none fixed inset-0 z-999 flex flex-col opacity-0 motion-reduce:transition-none transition-opacity duration-300 md:hidden"
   aria-hidden="true"
   inert
 >
   <!-- Top bar -->
-  <div class="border-line flex h-16 flex-shrink-0 items-center justify-between border-b px-5 sm:px-8">
-    <a href="/" tabindex="-1" aria-hidden="true" class="font-sans text-lg font-semibold text-brand">
-      M<em class="not-italic italic text-accent">D</em>
+  <div class="border-line flex h-16 shrink-0 items-center justify-between border-b px-5 sm:px-8">
+    <a href="/" tabindex="-1" aria-hidden="true" class="text-brand font-sans text-lg font-semibold">
+      M<span class="text-accent">D</span>
     </a>
     <button
       id="nav-close"
-      class="flex items-center justify-center rounded-lg p-2 text-brand hover:bg-tint"
+      class="text-brand hover:bg-tint flex items-center justify-center rounded-lg p-2"
       aria-label="Close menu"
     >
-      <X size={22} />
+      <X size={22} aria-hidden="true" />
     </button>
   </div>
 
@@ -77,29 +86,32 @@ const activeUnderline =
   <div class="flex flex-1 flex-col items-center justify-center gap-10 px-8">
     <a
       href="/"
+      aria-current={active === "home" ? "page" : undefined}
       class:list={[
         "font-serif text-4xl transition-colors duration-200",
         active === "home"
-          ? "italic text-accent"
-          : "text-brand hover:italic hover:text-accent",
+          ? "text-accent italic underline underline-offset-4"
+          : "text-brand hover:text-accent hover:italic",
       ]}
     >
       Home
     </a>
     <a
       href="/blog"
+      aria-current={active === "blog" ? "page" : undefined}
       class:list={[
         "font-serif text-4xl transition-colors duration-200",
         active === "blog"
-          ? "italic text-accent"
-          : "text-brand hover:italic hover:text-accent",
+          ? "text-accent italic underline underline-offset-4"
+          : "text-brand hover:text-accent hover:italic",
       ]}
     >
       Blog
     </a>
     <a
       href="/contact"
-      class="mt-2 rounded-full bg-accent px-10 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-deep"
+      aria-current={active === "contact" ? "page" : undefined}
+      class="bg-accent hover:bg-accent-deep mt-2 rounded-full px-10 py-3 text-base font-semibold text-white transition-colors"
     >
       Contact Me
     </a>
@@ -112,9 +124,7 @@ const activeUnderline =
   const close = document.getElementById("nav-close") as HTMLElement;
 
   const getFocusable = () =>
-    Array.from(
-      overlay.querySelectorAll<HTMLElement>("button, a[href]:not([tabindex='-1'])")
-    );
+    Array.from(overlay.querySelectorAll<HTMLElement>("button, a[href]:not([tabindex='-1'])"));
 
   function trapFocus(e: KeyboardEvent) {
     const focusable = getFocusable();
@@ -138,7 +148,7 @@ const activeUnderline =
     overlay.removeAttribute("inert");
     overlay.classList.remove("opacity-0", "pointer-events-none");
     overlay.classList.add("opacity-100", "pointer-events-auto");
-    overlay.setAttribute("aria-hidden", "false");
+    overlay.removeAttribute("aria-hidden");
     toggle.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", trapFocus);
