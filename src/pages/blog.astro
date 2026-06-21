@@ -11,12 +11,13 @@ import { posts } from "../data/posts";
 >
   <!-- ─── Blog header band ─── -->
   <section
+    aria-label="Blog introduction"
     class="px-5 py-16 sm:px-8 sm:py-20"
     style="background: linear-gradient(160deg, #f3ecf8 0%, #efe8f8 50%, #fbf7f1 100%);"
   >
     <div class="mx-auto max-w-3xl text-center">
       <h1 class="mb-4 font-serif text-4xl leading-tight text-brand sm:text-5xl md:text-[3.25rem]">
-        My <em class="not-italic italic text-accent">Blog</em>
+        My <span class="not-italic italic text-accent">Blog</span>
       </h1>
       <p class="font-sans text-base leading-relaxed text-muted sm:text-lg">
         Write-ups from cloud pentesting, CTFs &amp; AI red-teaming. Each post
@@ -26,11 +27,15 @@ import { posts } from "../data/posts";
   </section>
 
   <!-- ─── Posts grid ─── -->
-  <section class="px-5 py-16 sm:px-8 sm:py-20">
+  <section aria-label="Blog posts" class="px-5 py-16 sm:px-8 sm:py-20">
     <div class="mx-auto max-w-6xl">
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post) => <BlogCard post={post} />)}
-      </div>
+      <ul class="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3" role="list">
+        {posts.map((post) => (
+          <li>
+            <BlogCard post={post} />
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 </Layout>
