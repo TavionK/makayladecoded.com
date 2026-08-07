@@ -44,7 +44,7 @@ import SpeakingCard from "../components/SpeakingCard.astro";
           <!-- CTAs -->
           <div class="flex flex-col items-start gap-3">
             <a
-              href="/contact"
+              href="mailto:makayla.b.ferrell@gmail.com"
               class="focus-ring bg-accent hover:bg-accent-deep inline-flex items-center gap-1.5 rounded-full px-7 py-3 font-sans text-sm font-semibold text-white transition-colors"
             >
               Invite Makayla to Speak <span aria-hidden="true">→</span>
@@ -235,7 +235,7 @@ import SpeakingCard from "../components/SpeakingCard.astro";
 
       <!-- CTA -->
       <a
-        href="/contact"
+        href="#book"
         class="focus-ring inline-flex items-center gap-1.5 rounded-full bg-white px-7 py-3 font-sans text-sm font-semibold text-[#0f1117] transition-colors hover:bg-gray-100"
       >
         Ask about this talk <span aria-hidden="true">→</span>
@@ -395,6 +395,202 @@ import SpeakingCard from "../components/SpeakingCard.astro";
           })
         }
       </div>
+    </div>
+  </section>
+
+  <!-- ─── Watch & read ─── -->
+  <section aria-labelledby="watch-heading" class="bg-band px-5 py-16 sm:px-8 sm:py-24">
+    <div class="mx-auto max-w-6xl">
+      <h2 id="watch-heading" class="text-brand mb-4 font-serif text-3xl sm:text-4xl">
+        Watch &amp; read
+      </h2>
+      <p class="text-muted mb-12 max-w-2xl font-sans text-base leading-relaxed">
+        Want to get a feel for Makayla's communication style before booking? Explore selected
+        interviews and recorded discussions.
+      </p>
+
+      <div class="grid gap-6 sm:grid-cols-3">
+        {
+          [
+            {
+              label: "GUEST INTERVIEW",
+              year: "2025",
+              title: "Breaking Into Cyber",
+              description:
+                "A conversation about moving from software engineering into offensive security, penetration testing, AppSec, teaching, and mentorship.",
+            },
+            {
+              label: "FEATURED INTERVIEW",
+              year: "2024",
+              title: "Hacker Asks",
+              description:
+                "How Community and Curiosity Turned a Software Engineer into a Penetration Tester.",
+            },
+            {
+              label: "JEFFERSON WELLS / BRIGHTTALK",
+              year: "2025",
+              title: "Succeeding in Cybersecurity: Lessons from the Front Lines",
+              description:
+                "Recorded industry panel featuring Makayla discussing cybersecurity careers, challenges, and lessons from the field.",
+            },
+          ].map((item) => (
+            <div class="border-line bg-surface flex flex-col overflow-hidden rounded-2xl border shadow-sm">
+              <div class="border-line bg-band flex aspect-video w-full items-center justify-center border-b">
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  aria-hidden="true"
+                  class="text-line"
+                >
+                  <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.5" />
+                  <polygon points="15,12 26,18 15,24" fill="currentColor" opacity="0.4" />
+                </svg>
+              </div>
+              <div class="flex flex-col gap-2 p-5">
+                <p class="text-accent font-mono text-[0.6rem] font-bold tracking-widest uppercase">
+                  {item.label} | {item.year}
+                </p>
+                <h3 class="text-brand font-serif text-lg leading-snug">{item.title}</h3>
+                <p class="text-muted font-sans text-sm leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── About Makayla ─── -->
+  <section aria-labelledby="about-heading" class="px-5 py-16 sm:px-8 sm:py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid items-center gap-12 lg:grid-cols-[14rem_1fr] lg:gap-16">
+        <!-- Headshot placeholder -->
+        <div class="flex justify-center lg:justify-start">
+          <div
+            class="border-line bg-surface flex h-48 w-48 flex-col items-center justify-center gap-2 rounded-full border-2 border-dashed lg:h-56 lg:w-56"
+            aria-label="Placeholder for headshot of Makayla"
+          >
+            <Image size={28} class="text-line" aria-hidden="true" />
+            <p class="text-muted px-4 text-center font-sans text-[0.65rem]">headshot of Makayla</p>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div>
+          <h2 id="about-heading" class="text-brand mb-6 font-serif text-3xl sm:text-4xl">
+            About Makayla
+          </h2>
+          <div class="text-muted mb-6 space-y-4 font-sans text-base leading-relaxed">
+            <p>
+              Makayla Ferrell is a cybersecurity professional, educator, and founder of QueryLock.
+              She began her career as a software developer before moving into offensive security,
+              giving her experience both building applications and testing them for vulnerabilities.
+            </p>
+            <p>
+              Her work spans penetration testing, technical instruction, cybersecurity coaching,
+              university teaching, workshops, panels, and community education. She has taught
+              everything from beginner ethical hacking concepts to hands-on competition preparation
+              and professional penetration testing techniques.
+            </p>
+            <p>
+              Makayla believes cybersecurity becomes more effective when people understand the
+              technology behind the rules. Whether she is speaking to developers, security
+              professionals, students, business leaders, or people with no technical background, her
+              goal is to make complex ideas understandable enough to change how people think and
+              what they do next.
+            </p>
+          </div>
+
+          <!-- Role tags -->
+          <div class="border-line mb-5 flex flex-wrap gap-x-4 gap-y-2 border-t pt-5">
+            {
+              [
+                "Former Software Developer",
+                "Penetration Tester",
+                "Educator",
+                "DEF CON Workshop Instructor",
+                "Founder, QueryLock",
+              ].map((tag) => (
+                <span class="text-muted font-sans text-xs">{tag}</span>
+              ))
+            }
+          </div>
+
+          <a
+            href="/about"
+            class="focus-ring text-accent hover:text-accent-deep font-sans text-sm font-semibold transition-colors"
+          >
+            Learn about QueryLock <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Closing CTA ─── -->
+  <section id="book" aria-labelledby="cta-heading" class="bg-tint px-5 py-16 sm:px-8 sm:py-24">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2
+        id="cta-heading"
+        class="text-brand mb-5 font-serif text-3xl leading-tight sm:text-4xl md:text-[2.5rem]"
+      >
+        Bring a cybersecurity conversation your audience will actually understand.
+      </h2>
+      <p class="text-muted mb-8 font-sans text-base leading-relaxed">
+        Makayla is available for conferences, corporate events, developer communities, universities,
+        cybersecurity organizations, podcasts, panels, workshops, and general-audience technology
+        events. Sessions can be tailored to the audience's technical level, goals, and format.
+      </p>
+      <a
+        href="/contact"
+        class="focus-ring bg-accent hover:bg-accent-deep mb-8 inline-flex items-center gap-1.5 rounded-full px-8 py-3.5 font-sans text-sm font-semibold text-white transition-colors"
+      >
+        Invite Makayla to Speak <span aria-hidden="true">→</span>
+      </a>
+      <p class="text-muted mx-auto max-w-lg font-sans text-sm italic leading-relaxed">
+        Have a topic in mind that is not listed above? Reach out. Makayla can work with organizers
+        to shape a session around the audience and event goals.
+      </p>
+
+      <!-- Organizer resources accordion -->
+      <details class="border-line bg-surface mt-8 rounded-2xl border text-left">
+        <summary
+          class="focus-ring text-brand flex cursor-pointer list-none items-center justify-between px-6 py-4 font-sans text-sm font-semibold"
+        >
+          Organizer resources
+          <span aria-hidden="true" class="text-muted select-none text-lg leading-none">+</span>
+        </summary>
+        <div class="border-line border-t px-6 py-5">
+          <p class="text-muted mb-4 font-sans text-sm leading-relaxed">
+            When reaching out, it helps to include:
+          </p>
+          <div class="grid gap-x-8 gap-y-1 sm:grid-cols-2">
+            {
+              [
+                "Name",
+                "Email",
+                "Organization",
+                "Event name",
+                "Event date",
+                "Location or virtual",
+                "Audience type",
+                "Estimated audience size",
+                "Preferred topic or speaking area",
+                "Session format / length",
+                "Paid or unpaid opportunity",
+                "Additional details",
+              ].map((item) => (
+                <div class="flex items-center gap-2 py-1">
+                  <span class="text-accent" aria-hidden="true">•</span>
+                  <span class="text-muted font-mono text-sm">{item}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </details>
     </div>
   </section>
 </Layout>
