@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "@lucide/astro";
+import SpeakingCard from "../components/SpeakingCard.astro";
 ---
 
 <Layout
@@ -134,6 +135,48 @@ import { Image } from "@lucide/astro";
             </ol>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── What I speak about ─── -->
+  <section aria-labelledby="topics-heading" class="px-5 py-16 sm:px-8 sm:py-24">
+    <div class="mx-auto max-w-6xl">
+      <!-- Section header -->
+      <h2
+        id="topics-heading"
+        class="text-brand mb-4 font-serif text-3xl sm:text-4xl"
+      >
+        What I speak about
+      </h2>
+      <p class="text-muted mb-12 max-w-2xl font-sans text-base leading-relaxed">
+        Cybersecurity does not have one audience. Makayla tailors the depth, examples, and language
+        of each session to the people in the room, from deeply technical teams to audiences who
+        simply want to understand the technology shaping their lives and work.
+      </p>
+
+      <!-- Cards grid -->
+      <div class="grid gap-6 sm:grid-cols-2">
+        <SpeakingCard
+          title="Making Cybersecurity Make Sense"
+          body="Cybersecurity affects everyone, but it is often explained as if everyone already understands the technology behind it. Makayla breaks complex security concepts down without unnecessary jargon, helping audiences understand how technology works, where risk comes from, and why security decisions matter."
+          audience="General audiences, students, universities, employee events, leadership groups, conferences, and community organizations."
+        />
+        <SpeakingCard
+          title="Security Through a Developer's Lens"
+          body="Before testing software for vulnerabilities, Makayla built it. Her talks explore the disconnect that can form between development and security teams, why secure-development guidance sometimes fails, how vulnerabilities are introduced, and how better education can help teams build more secure software."
+          audience="Developers, engineering teams, AppSec teams, DevSecOps communities, technical leaders, and technology conferences."
+        />
+        <SpeakingCard
+          title="Ethical Hacking & Penetration Testing"
+          body="What does an ethical hacker actually do? Makayla brings real-world offensive-security experience into approachable talks about penetration testing, attack paths, vulnerabilities, hacker methodology, and what organizations can learn from seeing their systems through an attacker's eyes."
+          audience="Technical teams, business leaders, students, aspiring cybersecurity professionals, and curious general audiences."
+        />
+        <SpeakingCard
+          title="Cybersecurity Education & the Knowledge Gap"
+          body="Security problems are often treated as technology problems when many begin as knowledge problems. Makayla explores how we teach cybersecurity, why important lessons fail to stick, and what changes when people actually understand the systems, vulnerabilities, and safeguards they interact with."
+          audience="Conferences, educators, leadership audiences, security teams, developers, universities, and organizations focused on security culture."
+        />
       </div>
     </div>
   </section>

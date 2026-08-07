@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  audience: string;
+}
+
+const { title, body, audience } = Astro.props;
+---
+
+<div class="border-line bg-surface flex flex-col gap-6 rounded-2xl border p-8 shadow-sm">
+  <div>
+    <h3 class="text-brand mb-3 font-serif text-xl leading-snug sm:text-2xl">{title}</h3>
+    <p class="text-muted font-sans text-sm leading-relaxed">{body}</p>
+  </div>
+  <hr />
+  <div class="mt-auto">
+    <p class="text-accent mb-1.5 font-mono text-[0.65rem] font-bold tracking-widest uppercase">
+      Good fit for
+    </p>
+    <p class="text-muted font-sans text-xs leading-relaxed">{audience}</p>
+  </div>
+</div>
