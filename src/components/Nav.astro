@@ -2,7 +2,7 @@
 import { Menu, X } from "@lucide/astro";
 
 interface Props {
-  active?: "home" | "blog" | "contact";
+  active?: "home" | "blog" | "speaking" | "contact";
 }
 
 const { active = "home" } = Astro.props;
@@ -34,6 +34,11 @@ const activeUnderline =
           aria-current={active === "blog" ? "page" : undefined}
           class:list={[linkBase, active === "blog" && activeUnderline]}
         >Blog</a>
+        <a
+          href="/speaking"
+          aria-current={active === "speaking" ? "page" : undefined}
+          class:list={[linkBase, active === "speaking" && activeUnderline]}
+        >Speaking</a>
         <a
           href="/contact"
           aria-current={active === "contact" ? "page" : undefined}
@@ -107,6 +112,18 @@ const activeUnderline =
       ]}
     >
       Blog
+    </a>
+    <a
+      href="/speaking"
+      aria-current={active === "speaking" ? "page" : undefined}
+      class:list={[
+        "font-serif text-4xl transition-colors duration-200",
+        active === "speaking"
+          ? "text-accent italic underline underline-offset-4"
+          : "text-brand hover:text-accent hover:italic",
+      ]}
+    >
+      Speaking
     </a>
     <a
       href="/contact"

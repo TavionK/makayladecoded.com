@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@lucide/astro";
+---
+
+<Layout
+  title="Speaking"
+  description="Invite Makayla Ferrell to speak at your event — cybersecurity topics made clear and accessible for every audience."
+  active="speaking"
+>
+  <section
+    aria-labelledby="speaking-heading"
+    class="overflow-hidden px-5 pt-16 pb-20 sm:px-8 md:pt-24"
+  >
+    <div class="mx-auto max-w-6xl">
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <!-- Text column -->
+        <div class="max-w-xl">
+          <!-- Badge -->
+          <div
+            class="border-line bg-surface text-muted mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 font-mono text-xs shadow-sm"
+          >
+            <span class="h-2 w-2 shrink-0 rounded-full bg-[#28C840]" aria-hidden="true"></span>
+            SPEAKING
+          </div>
+
+          <!-- Headline -->
+          <h1
+            id="speaking-heading"
+            class="text-brand mb-6 font-serif text-4xl leading-[1.15] sm:text-5xl md:text-[3rem]"
+          >
+            Cybersecurity that makes sense to every audience.
+          </h1>
+
+          <!-- Body -->
+          <p class="text-muted mb-8 font-sans text-base leading-relaxed">
+            Makayla Ferrell is a former software developer turned penetration tester, educator, and
+            founder of QueryLock. She makes complex cybersecurity and technology topics clear,
+            useful, and relevant for audiences ranging from developers and security teams to
+            students, business leaders, and people with no technical background.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col items-start gap-3">
+            <a
+              href="/contact"
+              class="focus-ring bg-accent hover:bg-accent-deep inline-flex items-center gap-1.5 rounded-full px-7 py-3 font-sans text-sm font-semibold text-white transition-colors"
+            >
+              Invite Makayla to Speak <span aria-hidden="true">→</span>
+            </a>
+            <a
+              href="#experience"
+              class="focus-ring border-accent text-accent hover:bg-tint inline-flex items-center rounded-full border px-7 py-3 font-sans text-sm font-semibold transition-colors"
+            >
+              View Speaking Experience
+            </a>
+          </div>
+        </div>
+
+        <!-- Image placeholder column -->
+        <div class="flex justify-center lg:justify-end">
+          <div
+            class="border-line bg-surface flex w-full max-w-sm flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed py-24 lg:max-w-none"
+            aria-label="Placeholder for professional photo of Makayla speaking"
+          >
+            <Image size={32} class="text-line" aria-hidden="true" />
+            <p class="text-muted font-sans text-xs">professional photo of Makayla speaking</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ─── Perspective section ─── -->
+  <section
+    id="experience"
+    aria-labelledby="perspective-heading"
+    class="bg-band px-5 py-16 sm:px-8 sm:py-24"
+  >
+    <div class="mx-auto max-w-6xl">
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <!-- Text column -->
+        <div class="max-w-xl">
+          <h2
+            id="perspective-heading"
+            class="text-brand mb-6 font-serif text-3xl leading-tight sm:text-4xl md:text-[2.5rem]"
+          >
+            A perspective from both sides of software security.
+          </h2>
+          <div class="text-muted space-y-5 font-sans text-base leading-relaxed">
+            <p>
+              Before testing applications for vulnerabilities, Makayla built software herself. That
+              experience gives her a practical understanding of how developers think, the pressures
+              engineering teams work under, and why security guidance can succeed or fail in the
+              real world.
+            </p>
+            <p>
+              Her work in penetration testing showed her the other side: how attackers find
+              weaknesses, how small decisions become security risks, and how often the same problems
+              appear because the people building and using technology were never given the context
+              to understand them.
+            </p>
+            <p>
+              Whether the room is full of developers, security professionals, students, executives,
+              or people who have never written a line of code, Makayla meets the audience where they
+              are and makes the technology understandable without talking down to them.
+            </p>
+          </div>
+        </div>
+
+        <!-- Journey visual column -->
+        <div class="flex justify-center lg:justify-end">
+          <div class="w-full max-w-sm rounded-2xl bg-white px-10 py-14 lg:max-w-none">
+            <ol
+              class="flex list-none flex-col items-center gap-0 p-0"
+              aria-label="Makayla's career journey"
+            >
+              {
+                ["DEVELOPER", "PENETRATION TESTER", "EDUCATOR", "FOUNDER"].map((label, i, arr) => (
+                  <>
+                    <li class="bg-band text-accent w-full rounded-full py-2.5 text-center font-sans text-xs font-bold">
+                      {label}
+                    </li>
+                    {i < arr.length - 1 && (
+                      <li
+                        aria-hidden="true"
+                        class="text-muted py-2 text-base leading-none select-none"
+                      >
+                        ↓
+                      </li>
+                    )}
+                  </>
+                ))
+              }
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
