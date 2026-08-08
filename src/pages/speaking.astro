@@ -60,11 +60,11 @@ import SpeakingCard from "../components/SpeakingCard.astro";
 
         <!-- Image column -->
         <div class="flex justify-center lg:justify-end">
-          <div class="relative w-full max-w-sm lg:max-w-none">
+          <div class="relative w-full max-w-sm overflow-hidden rounded-2xl lg:max-w-none">
             <img
               src="/img/makayla-defcon30.png"
               alt="Makayla Ferrell speaking at DEF CON 30"
-              class="w-full rounded-2xl object-cover"
+              class="w-full scale-125 object-cover object-[50%_center]"
             />
             <div class="absolute right-0 bottom-0 left-0 rounded-b-2xl bg-linear-to-t from-black/60 to-transparent px-5 py-5">
               <p class="inline-block rounded-lg border border-white/20 bg-white/10 px-3 py-1.5 font-mono text-xs font-semibold text-white uppercase tracking-widest backdrop-blur-md">
@@ -424,6 +424,7 @@ import SpeakingCard from "../components/SpeakingCard.astro";
               description:
                 "A conversation about moving from software engineering into offensive security, penetration testing, AppSec, teaching, and mentorship.",
               url: "https://youtu.be/k8efntuGg3I?si=v_dLkBbok2r0emgF",
+              thumbnail: "/img/video-thumbnails/BreakingintoCyber.jpg",
             },
             {
               label: "FEATURED INTERVIEW",
@@ -432,6 +433,7 @@ import SpeakingCard from "../components/SpeakingCard.astro";
               description:
                 "How Community and Curiosity Turned a Software Engineer into a Penetration Tester.",
               url: "https://www.hackerasks.com/makayla-ferrell/",
+              thumbnail: "/img/video-thumbnails/HackerAsks.png",
             },
             {
               label: "JEFFERSON WELLS / BRIGHTTALK",
@@ -440,6 +442,7 @@ import SpeakingCard from "../components/SpeakingCard.astro";
               description:
                 "Recorded industry panel featuring Makayla discussing cybersecurity careers, challenges, and lessons from the field.",
               url: "https://www.brighttalk.com/webcast/19908/650462",
+              thumbnail: "/img/video-thumbnails/SucceedinginCyber.png",
             },
           ].map((item) => (
             <a
@@ -448,18 +451,13 @@ import SpeakingCard from "../components/SpeakingCard.astro";
               rel="noopener noreferrer"
               class="focus-ring border-line bg-surface group flex flex-col overflow-hidden rounded-2xl border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
-              <div class="border-line bg-band flex aspect-video w-full items-center justify-center overflow-hidden border-b">
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 36 36"
-                  fill="none"
+              <div class="relative aspect-video w-full overflow-hidden">
+                <img
+                  src={item.thumbnail}
+                  alt=""
                   aria-hidden="true"
-                  class="text-line transition-transform duration-500 group-hover:scale-105"
-                >
-                  <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.5" />
-                  <polygon points="15,12 26,18 15,24" fill="currentColor" opacity="0.4" />
-                </svg>
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
               <div class="flex flex-col gap-2 p-5">
                 <p class="text-accent font-mono text-[0.6rem] font-bold tracking-widest uppercase">
@@ -481,11 +479,13 @@ import SpeakingCard from "../components/SpeakingCard.astro";
       <div class="grid items-center gap-12 lg:grid-cols-[14rem_1fr] lg:gap-16">
         <!-- Headshot -->
         <div class="flex justify-center lg:justify-start">
-          <img
-            src="/img/headshot.png"
-            alt="Headshot of Makayla Ferrell"
-            class="border-line h-48 w-48 rounded-full border-2 object-cover lg:h-56 lg:w-56"
-          />
+          <div class="border-line h-48 w-48 overflow-hidden rounded-full border-2 lg:h-56 lg:w-56">
+            <img
+              src="/img/headshot.png"
+              alt="Headshot of Makayla Ferrell"
+              class="h-full w-full object-cover"
+            />
+          </div>
         </div>
 
         <!-- Text -->
