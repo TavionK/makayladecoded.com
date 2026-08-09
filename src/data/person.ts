@@ -14,6 +14,9 @@ export const personBase = {
     "Application Security",
     "Network Security",
     "AI/LLM Security",
+    "Secure Software Development",
+    "Software Engineering",
+    "Cybersecurity Education",
   ],
   worksFor: {
     "@type": "Organization",
