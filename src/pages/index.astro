@@ -4,11 +4,17 @@ import BlogCard from "../components/BlogCard.astro";
 import TerminalCard from "../components/TerminalCard.astro";
 import FooterCTA from "../components/FooterCTA.astro";
 import { posts } from "../data/posts";
+import { personBase } from "../data/person";
 
 const latestPosts = posts.slice(0, 3);
 ---
 
-<Layout title="Home" active="home">
+<Layout
+  title="Makayla Ferrell | Ethical Hacker and Educator"
+  description="Makayla Ferrell is an OSCP, GWAPT, eCPPT & Security+ certified penetration tester, cybersecurity instructor, and speaker."
+  active="home"
+  structuredData={personBase}
+>
   <!-- ─── Hero ─── -->
   <section aria-labelledby="hero-heading" class="overflow-hidden px-5 pt-16 pb-20 sm:px-8 md:pt-24">
     <div class="mx-auto max-w-6xl">
@@ -32,7 +38,7 @@ const latestPosts = posts.slice(0, 3);
             class="text-brand mb-3 font-serif text-4xl leading-[1.1] sm:text-5xl md:text-[3.5rem]"
           >
             Hi, I'm{" "}
-            <span class="text-accent">Makayla</span>
+            <span class="text-accent">Makayla Ferrell</span>
           </h1>
 
           <p class="mb-6 font-serif text-2xl leading-snug sm:text-3xl">
